@@ -10,17 +10,22 @@ import { CountriesService } from '../../services/countries.service';
 })
 export class ByCapitalPageComponent {
 
-  public countries: Country[] = []
+  public countries: Country[] = [];
+
+  public isLoading: boolean = false;
 
   constructor(private countriesService: CountriesService) { }
 
   searchByCapital(input: string): void {
+
+    this.isLoading = true; 
 
     // ! apuntes del input 3
 
     this.countriesService.searchCapital(input)
     .subscribe(countries => {
       this.countries = countries
+      this.isLoading = false;
     }) //! apuntes de porque si no se pone suscripbes no se ejecuta
   }
 
