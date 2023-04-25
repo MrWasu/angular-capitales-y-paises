@@ -7,6 +7,7 @@
         <shared-search-box
          placeholder="Buscar por cápital" 
          (onValue)="searchByCapital($event)"
+         (onDebounce)="searchByCapital($event)"
          > 
          <!-- ! apuntes del input 0 -->
         </shared-search-box>

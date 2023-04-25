@@ -23,7 +23,7 @@ export class ByCountryPageComponent {
     this.countriesService.searchCountry( term )
       .subscribe( countries => {
         this.countries = countries;
-        this.isLoading = false;
+        
       });
 
   }
