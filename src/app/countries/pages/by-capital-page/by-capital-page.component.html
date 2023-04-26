@@ -6,12 +6,11 @@
 
         <shared-search-box
          placeholder="Buscar por cápital" 
-         (onValue)="searchByCapital($event)"
          (onDebounce)="searchByCapital($event)"
+         [initialValue]="initialValue"
          > 
-         <!-- ! apuntes del input 0 -->
         </shared-search-box>
-        <!-- !apuntes de placeholder junto con lo otro -->
+       
 
     </div>
 </div>

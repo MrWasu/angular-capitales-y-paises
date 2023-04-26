@@ -9,17 +9,18 @@ import { Subject, debounceTime, Subscription } from 'rxjs';
 })
 export class SearchBoxComponent implements OnInit, OnDestroy {
 
-  private debouncer: Subject<string> = new Subject<string>(); //! apuntes debouncer y subject
+  private debouncer: Subject<string> = new Subject<string>(); // apuntes debouncer y subject
   private debouncerSuscription?: Subscription;
 
   @Input()
   public placeholder: string = '';
-
-  @Output() //! apuntes del input 1
-  public onValue = new EventEmitter<string>();
+  
+  @Input()
+  public initialValue: string = '';
 
   @Output()
   public onDebounce = new EventEmitter<string>();
+
 
   ngOnInit(): void {
     this.debouncerSuscription = this.debouncer
@@ -33,10 +34,6 @@ export class SearchBoxComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {  //!apuntes
     this.debouncerSuscription?.unsubscribe();
-  }
-
-  emitValue( value: string ):void {
-    this.onValue.emit( value );
   }
 
   onKeypress( searchTerm : string) {
