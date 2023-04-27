@@ -10,7 +10,7 @@ import { Country } from '../../interfaces/country';
   styles: [
   ]
 })
-export class CountryPageComponent implements OnInit { //!apuntes
+export class CountryPageComponent implements OnInit {
 
   public country?: Country;
 
@@ -25,7 +25,7 @@ export class CountryPageComponent implements OnInit { //!apuntes
 
     this.activatedRoute.params
       .pipe(
-        switchMap(({ id }) => this.countriesService.searchCountrybyCode(id)) //!apuntes pipe y switchmap
+        switchMap(({ id }) => this.countriesService.searchCountrybyCode(id)) //!apuntes switchmap
       )
       .subscribe((country) => {
 

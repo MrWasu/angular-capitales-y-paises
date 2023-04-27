@@ -29,7 +29,7 @@ export class ByCapitalPageComponent implements OnInit {
     .subscribe(countries => {
       this.countries = countries
       this.isLoading = false;
-    }) //! apuntes de porque si no se pone suscribes no se ejecuta
+    }) 
   }
 
 }
